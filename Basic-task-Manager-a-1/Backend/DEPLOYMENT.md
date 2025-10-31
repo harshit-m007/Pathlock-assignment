@@ -17,7 +17,7 @@
 - **Branch**: `main` (or your default branch)
 
 **Build Settings:**
-- **Root Directory**: `Basic Task Manager (Assginment-1)/Backend`
+- **Root Directory**: `Basic-task-Manager-a-1/Backend`
 - **Dockerfile Path**: `Dockerfile` (should auto-detect)
 - Render will automatically use the Dockerfile in the Backend directory
 
@@ -59,7 +59,7 @@ const API_BASE = import.meta.env.VITE_API_BASE || 'https://your-service-name.onr
 If you prefer not to use Docker, you can use Render's build commands:
 
 1. After selecting **"Docker"** as environment, you can override with:
-   - **Root Directory**: `Basic Task Manager (Assginment-1)/Backend`
+   - **Root Directory**: `Basic-task-Manager-a-1/Backend`
    - **Build Command**: `dotnet restore && dotnet publish -c Release -o ./publish`
    - **Start Command**: `dotnet ./publish/Backend.dll`
 

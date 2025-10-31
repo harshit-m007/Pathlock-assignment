@@ -17,7 +17,7 @@
 - **Branch**: `main` (or your default branch)
 
 **Build Settings:**
-- **Root Directory**: `Mini Project Manager (Assingnment-2)/Backend`
+- **Root Directory**: `Mini-Project-Manger-a-2/Backend`
 - **Dockerfile Path**: `Dockerfile` (should auto-detect)
 - Render will automatically use the Dockerfile in the Backend directory
 
@@ -104,7 +104,7 @@ SQLite on Render uses ephemeral storage - **data will be lost on redeploy**. For
 If you prefer not to use Docker, you can use Render's build commands:
 
 1. After selecting **"Docker"** as environment, you can override with:
-   - **Root Directory**: `Mini Project Manager (Assingnment-2)/Backend`
+   - **Root Directory**: `Mini-Project-Manger-a-2/Backend`
    - **Build Command**: `dotnet restore && dotnet publish -c Release -o ./publish`
    - **Start Command**: `dotnet ./publish/MiniProjectManager.Api.dll`
 

@@ -6,11 +6,11 @@ This repository contains two full-stack web application assignments showcasing .
 
 ```
 .
-├── Basic Task Manager (Assginment-1)/    # Simple task management app
+├── Basic-task-Manager-a-1/              # Simple task management app
 │   ├── Backend/                          # .NET 9 REST API
 │   └── Frontend/                         # React + TypeScript + Tailwind
 │  
-└── Mini Project Manager (Assingnment-2)/ # Advanced project management with auth
+└── Mini-Project-Manger-a-2/             # Advanced project management with auth
     ├── Backend/                          # .NET 9 Web API + EF Core + JWT
     └── Frontend/                         # React + TypeScript + Vite
 ```
@@ -35,7 +35,7 @@ A simple task management application demonstrating core CRUD operations and filt
 
 **Backend:**
 ```bash
-cd "Basic Task Manager (Assginment-1)/Backend"
+cd "Basic-task-Manager-a-1/Backend"
 dotnet restore
 dotnet run
 # API available at http://localhost:5000
@@ -43,7 +43,7 @@ dotnet run
 
 **Frontend:**
 ```bash
-cd "Basic Task Manager (Assginment-1)/Frontend"
+cd "Basic-task-Manager-a-1/Frontend"
 npm install
 npm run dev
 # Available at http://localhost:5173
@@ -55,7 +55,7 @@ npm run dev
 - `PUT /api/tasks/{id}` - Update a task
 - `DELETE /api/tasks/{id}` - Delete a task
 
-📖 [Detailed README](./Basic%20Task%20Manager%20(Assginment-1)/README.md)
+📖 [Detailed README](./Basic-task-Manager-a-1/README.md)
 
 ---
 
@@ -79,7 +79,7 @@ An advanced project management system with user authentication, project organiza
 
 **Backend:**
 ```bash
-cd "Mini Project Manager (Assingnment-2)/Backend"
+cd "Mini-Project-Manger-a-2/Backend"
 dotnet restore
 dotnet run
 # API available at http://localhost:5000 (or port shown in console)
@@ -87,7 +87,7 @@ dotnet run
 
 **Frontend:**
 ```bash
-cd "Mini Project Manager (Assingnment-2)/Frontend"
+cd "Mini-Project-Manger-a-2/Frontend"
 npm install
 npm run dev
 # App available at http://localhost:5175
@@ -118,7 +118,7 @@ VITE_API_BASE=http://localhost:5000
 **Smart Scheduler:**
 - `POST /api/v1/projects/{projectId}/schedule` - Get recommended task execution order
 
-📖 [Detailed README](./Mini%20Project%20Manager%20(Assingnment-2)/README.md)
+📖 [Detailed README](./Mini-Project-Manger-a-2/README.md)
 
 ---
 
@@ -152,6 +152,6 @@ VITE_API_BASE=http://localhost:5000
 ## 🚀 Deployment
 
 Refer to individual assignment README files for deployment instructions:
-- [Assignment 1 Deployment Guide](./Basic%20Task%20Manager%20(Assginment-1)/README.md#deployment)
-- Assignment 2 deployment instructions coming soon
+- [Assignment 1 Deployment Guide](./Basic-task-Manager-a-1/Backend/DEPLOYMENT.md)
+- [Assignment 2 Deployment Guide](./Mini-Project-Manger-a-2/Backend/DEPLOYMENT.md)
 
