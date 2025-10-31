@@ -12,20 +12,16 @@
 
 **Service Settings:**
 - **Name**: `mini-project-manager-backend` (or your preferred name)
-- **Environment**: `Other` (or `Docker` if using Dockerfile)
+- **Environment**: Select **"Docker"** from the dropdown
 - **Region**: Choose closest to your users
 - **Branch**: `main` (or your default branch)
 
 **Build Settings:**
 - **Root Directory**: `Mini Project Manager (Assingnment-2)/Backend`
-- **Build Command**: 
-  ```bash
-  dotnet restore && dotnet publish -c Release -o ./publish
-  ```
-- **Start Command**: 
-  ```bash
-  dotnet ./publish/MiniProjectManager.Api.dll
-  ```
+- **Dockerfile Path**: `Dockerfile` (should auto-detect)
+- Render will automatically use the Dockerfile in the Backend directory
+
+**Note**: The Dockerfile is already created in the Backend directory. Render will build and deploy using it automatically.
 
 ### Step 3: Environment Variables
 
@@ -103,35 +99,16 @@ SQLite on Render uses ephemeral storage - **data will be lost on redeploy**. For
 
 ---
 
-## Alternative: Using Docker (Optional)
+## Alternative: Manual Build Commands (Without Docker)
 
-Create `Dockerfile` in the Backend directory:
+If you prefer not to use Docker, you can use Render's build commands:
 
-```dockerfile
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+1. After selecting **"Docker"** as environment, you can override with:
+   - **Root Directory**: `Mini Project Manager (Assingnment-2)/Backend`
+   - **Build Command**: `dotnet restore && dotnet publish -c Release -o ./publish`
+   - **Start Command**: `dotnet ./publish/MiniProjectManager.Api.dll`
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
-COPY ["MiniProjectManager.Api.csproj", "./"]
-RUN dotnet restore "MiniProjectManager.Api.csproj"
-COPY . .
-RUN dotnet build "MiniProjectManager.Api.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "MiniProjectManager.Api.csproj" -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MiniProjectManager.Api.dll"]
-```
-
-Then in Render, set:
-- **Dockerfile Path**: `Mini Project Manager (Assingnment-2)/Backend/Dockerfile`
-- **Root Directory**: `Mini Project Manager (Assingnment-2)/Backend`
+**However, using the Dockerfile is recommended** as it's already configured and works reliably.
 
 ---
 

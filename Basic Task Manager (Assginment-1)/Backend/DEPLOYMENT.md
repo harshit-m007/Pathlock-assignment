@@ -12,20 +12,16 @@
 
 **Service Settings:**
 - **Name**: `basic-task-manager-backend` (or your preferred name)
-- **Environment**: `Docker` (or select **"Other"** and use the settings below)
+- **Environment**: Select **"Docker"** from the dropdown
 - **Region**: Choose closest to your users
 - **Branch**: `main` (or your default branch)
 
 **Build Settings:**
 - **Root Directory**: `Basic Task Manager (Assginment-1)/Backend`
-- **Build Command**: 
-  ```bash
-  dotnet restore && dotnet publish -c Release -o ./publish
-  ```
-- **Start Command**: 
-  ```bash
-  dotnet ./publish/Backend.dll
-  ```
+- **Dockerfile Path**: `Dockerfile` (should auto-detect)
+- Render will automatically use the Dockerfile in the Backend directory
+
+**Note**: The Dockerfile is already created in the Backend directory. Render will build and deploy using it automatically.
 
 ### Step 3: Environment Variables (Optional)
 
@@ -58,35 +54,16 @@ const API_BASE = import.meta.env.VITE_API_BASE || 'https://your-service-name.onr
 
 ---
 
-## Alternative: Using Docker (Optional)
+## Alternative: Manual Build Commands (Without Docker)
 
-If you prefer Docker, create `Dockerfile` in the Backend directory:
+If you prefer not to use Docker, you can use Render's build commands:
 
-```dockerfile
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+1. After selecting **"Docker"** as environment, you can override with:
+   - **Root Directory**: `Basic Task Manager (Assginment-1)/Backend`
+   - **Build Command**: `dotnet restore && dotnet publish -c Release -o ./publish`
+   - **Start Command**: `dotnet ./publish/Backend.dll`
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
-COPY ["Backend.csproj", "./"]
-RUN dotnet restore "Backend.csproj"
-COPY . .
-RUN dotnet build "Backend.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "Backend.csproj" -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Backend.dll"]
-```
-
-Then in Render, set:
-- **Dockerfile Path**: `Basic Task Manager (Assginment-1)/Backend/Dockerfile`
-- **Root Directory**: `Basic Task Manager (Assginment-1)/Backend`
+**However, using the Dockerfile is recommended** as it's already configured and works reliably.
 
 ---
 
