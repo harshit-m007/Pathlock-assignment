@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://mini-project-manager-xfvj.onrender.com';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://mini-project-manager-6t56.onrender.com';
 
 async function request(path: string, options: RequestInit = {}) {
   const token = localStorage.getItem('token');
