@@ -2,6 +2,13 @@
 
 This repository contains two full-stack web application assignments showcasing .NET backend and React frontend development.  
 
+## 🌐 Live Demos
+
+- **Assignment 1 - Basic Task Manager**: [🔗 View Live](https://pathlock-assignment.vercel.app/)
+- **Assignment 2 - Mini Project Manager**: [🔗 View Live](https://mini-project-manager-omega.vercel.app/)
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -18,6 +25,8 @@ This repository contains two full-stack web application assignments showcasing .
 ---
 
 ## 📋 Assignment 1: Basic Task Manager
+
+**🌐 [Live Demo](https://pathlock-assignment.vercel.app/)**
 
 A simple task management application demonstrating core CRUD operations and filtering capabilities.
 
@@ -60,6 +69,8 @@ npm run dev
 ---
 
 ## 📋 Assignment 2: Mini Project Manager
+
+**🌐 [Live Demo](https://mini-project-manager-omega.vercel.app/)**
 
 An advanced project management system with user authentication, project organization, and intelligent task scheduling.
 
