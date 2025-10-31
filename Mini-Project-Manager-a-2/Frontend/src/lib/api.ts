@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://mini-project-manager-xfvj.onrender.com';
 
 async function request(path: string, options: RequestInit = {}) {
   const token = localStorage.getItem('token');
